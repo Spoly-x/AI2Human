@@ -1,15 +1,16 @@
 # AI2Human 🚀
 
-**AI2Human** is a project that includes [This Project is to Transform-Display Text Written by an AI in a Human-Made Way. The Project was Launched in V0.1 Version and Only Includes **3  Languages; English, Spanish and Turkish** Language]. 
-# This project is designed for
-[With the Entry of AI into Our Daily Lives, There Are People Who Do Not Want to Show That It Is AI in Certain Places. For example, the difference between human and AI is widely known. So this project is designed for HUMANIZATİON]. 🤖💡
+**AI2Human** is a project designed to transform and display text written by AI in a human-made way. The project was launched in version 0.1 and currently supports **3 languages**: English, Spanish, and Turkish.
+
+## Purpose
+With AI becoming a part of our daily lives, some people don't want to reveal that the content is AI-generated in certain contexts. This project is designed to **HUMANIZE** AI-generated text.
 
 ## Features 🌟
 
-- **[From AI-Written English Text to Human-Written English Text]**: [Our code tries to emulate human-made images as **BEST** it can.] 🔧
-- **[Texto Escrito por IA En español a texto Escrito por Humanos en español.]**: [Nuestro código ha sido escrito de la mejor manera por IA, tratando de asemejarse a la escritura humana en español.] 🔍
-- **[Yapay Zeka Tarafından Yazılmış Türkçeden İnsan Tarafından Yazılmış Türkçeye]**: [Kodumuz Yapabileceği **En iyi** Şekilde İnsan Tarafından Yazılmış Türkçeye Çevirmeye Çalışır.] 🎯
-- **[And A Beatiful BackGround]** 🌈
+- **[From AI-Written English Text to Human-Written English Text]**: Our code tries to emulate human-made text as **BEST** as it can. 🔧
+- **[Texto Escrito por IA en español a Texto Escrito por Humanos en español.]**: Nuestro código ha sido escrito de la mejor manera por IA, tratando de asemejarse a la escritura humana en español. 🔍
+- **[Yapay Zeka Tarafından Yazılmış Türkçeden İnsan Tarafından Yazılmış Türkçeye]**: Kodumuz, yapabileceği **en iyi** şekilde, insan tarafından yazılmış Türkçeye çevirmeye çalışır. 🎯
+- **[And A Beautiful Background]** 🌈
 
 ## Installation 🔨
 
