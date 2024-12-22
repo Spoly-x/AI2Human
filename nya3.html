@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 2 Human V0.1</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    </style>
+</head>
+<body>
+    
+    <div class="logo-container">
+        <span class="ai">AI</span><span class="arrow">→</span><span class="human">Human</span>
+    </div>
+
+    
+    <div class="stars"></div>
+
+
+<div class="container">
+    <h1>AI 2 Human V0.1</h1>
+    <textarea id="aiText" placeholder="Paste the text written by the AI here. . .
+Pega aquí el texto escrito por la IA...    
+Yapay zeka tarafından yazılmış metni buraya yapıştırın..."></textarea>
+    
+    <div class="language-buttons">
+        <button onclick="editText('tr')">Türkçe Düzenle</button>
+        <button onclick="editText('en')">Edit in English</button>
+        <button onclick="editText('es')">Editar en Español</button>
+    </div>
+
+    <h2>Edited Text (Turkish):</h2>
+    <div id="turkishText" class="output" style="white-space: pre-wrap;"></div>
+
+    <h2>Edited Text (English):</h2>
+    <div id="englishText" class="output" style="white-space: pre-wrap;"></div>
+
+    <h2>Edited Text (Spanish):</h2>
+    <div id="spanishText" class="output" style="white-space: pre-wrap;"></div>
+</div>
+
+<script>
+    function editText(language) {
+        var aiText = document.getElementById('aiText').value;
+
+        // Clear all previous results
+        document.getElementById('turkishText').innerText = '';
+        document.getElementById('englishText').innerText = '';
+        document.getElementById('spanishText').innerText = '';
+
+        // Turkish Text Editing
+        if (language === 'tr') {
+            var turkishText = aiText
+                .replace(/Yapay zeka/g, 'Ben')
+                .replace(/ancak/g, 'ama')
+                .replace(/bu metin/g, 'bu yazı')
+                .replace(/belirli/g, 'bazı')
+                .replace(/fakat/g, 'ama')
+                .replace(/çok/g, 'oldukça')
+                .replace(/aşağıdaki gibi/g, 'şu şekilde')
+                .replace(/özellikle/g, 'özellikle de')
+                .replace(/bununla birlikte/g, 'bunun yanında')
+                .replace(/dolayısıyla/g, 'sonuç olarak')
+                .replace(/şayet/g, 'eğer')
+                .replace(/belki/g, 'muhtemelen')
+                .replace(/böylece/g, 've böylece')
+                .replace(/işte/g, 'tam olarak')
+                .replace(/[\.\,\;\:\?\!]/g, '')
+                .replace(/\s+/g, ' ')
+                .replace(/([a-zA-Z])([A-Z])/g, function(match, p1, p2) { 
+                    return p1 + p2.toLowerCase();
+                })
+                .replace(/^([a-z])/g, function(match) {
+                    return match.toUpperCase();
+                });
+
+            document.getElementById('turkishText').innerText = turkishText;
+        }
+
+        // English Text Editing
+        if (language === 'en') {
+            var englishText = aiText
+                .replace(/Artificial intelligence/g, 'I')
+                .replace(/however/g, 'but')
+                .replace(/this text/g, 'this writing')
+                .replace(/certain/g, 'some')
+                .replace(/furthermore/g, 'but also')
+                .replace(/very/g, 'quite')
+                .replace(/as follows/g, 'like this')
+                .replace(/especially/g, 'especially also')
+                .replace(/moreover/g, 'besides')
+                .replace(/therefore/g, 'as a result')
+                .replace(/if/g, 'in case')
+                .replace(/perhaps/g, 'maybe')
+                .replace(/thus/g, 'and thus')
+                .replace(/indeed/g, 'exactly')
+                .replace(/[\.\,\;\:\?\!]/g, '')
+                .replace(/\s+/g, ' ')
+                .replace(/([a-zA-Z])([A-Z])/g, function(match, p1, p2) { 
+                    return p1 + p2.toLowerCase();
+                })
+                .replace(/^([a-z])/g, function(match) {
+                    return match.toUpperCase();
+                });
+
+            document.getElementById('englishText').innerText = englishText;
+        }
+
+        // Spanish Text Editing
+        if (language === 'es') {
+            var spanishText = aiText
+                .replace(/inteligencia artificial/g, 'yo')
+                .replace(/sin embargo/g, 'pero')
+                .replace(/este texto/g, 'este escrito')
+                .replace(/cierto/g, 'algunos')
+                .replace(/además/g, 'pero también')
+                .replace(/muy/g, 'bastante')
+                .replace(/de la siguiente manera/g, 'así')
+                .replace(/especialmente/g, 'especialmente también')
+                .replace(/además/g, 'aparte')
+                .replace(/por lo tanto/g, 'como resultado')
+                .replace(/si/g, 'en caso de que')
+                .replace(/tal vez/g, 'quizás')
+                .replace(/así/g, 'y así')
+                .replace(/en realidad/g, 'exactamente')
+                .replace(/[\.\,\;\:\?\!]/g, '')
+                .replace(/\s+/g, ' ')
+                .replace(/([a-zA-Z])([A-Z])/g, function(match, p1, p2) { 
+                    return p1 + p2.toLowerCase();
+                })
+                .replace(/^([a-z])/g, function(match) {
+                    return match.toUpperCase();
+                });
+
+            document.getElementById('spanishText').innerText = spanishText;
+        }
+    }
+</script>
+
+</body>
+</html>
