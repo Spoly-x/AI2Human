@@ -3,10 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI 2 Human V0.2-dev</title>
+    <title>AI 2 Human V2.0</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="AI2HUMAN.png" type="image/png">
     <style>
+        .copy-btn {
+            margin-top: 10px;
+            cursor: pointer;
+            padding: 5px 10px;
+            background-color: #e73ba5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            background: linear-gradient(45deg, #020024, #090979, #00d4ff);
+            box-shadow: 0 0 10px #a3c7a4, 0 0 20px #8c55d3, 0 0 30px #c5964f, 0 0 40px #4CAF50;
+        }
     </style>
 </head>
 <body>
@@ -20,7 +31,7 @@
 
 
 <div class="container">
-    <h1>AI 2 Human V0.1</h1>
+    <h1>AI 2 Human V0.2</h1>
     <textarea id="aiText" placeholder="Paste the text written by the AI here. . .
 Pega aquí el texto escrito por la IA...    
 Yapay zeka tarafından yazılmış metni buraya yapıştırın..."></textarea>
@@ -33,13 +44,17 @@ Yapay zeka tarafından yazılmış metni buraya yapıştırın..."></textarea>
 
     <h2>Edited Text (Turkish):</h2>
     <div id="turkishText" class="output" style="white-space: pre-wrap;"></div>
+    <button id="turkishCopyBtn" class="copy-btn" onclick="copyText('turkishText')">Kopyala</button>
 
     <h2>Edited Text (English):</h2>
     <div id="englishText" class="output" style="white-space: pre-wrap;"></div>
+    <button id="englishCopyBtn" class="copy-btn" onclick="copyText('englishText')">Copy</button>
 
     <h2>Edited Text (Spanish):</h2>
     <div id="spanishText" class="output" style="white-space: pre-wrap;"></div>
+    <button id="spanishCopyBtn" class="copy-btn" onclick="copyText('spanishText')">Copiar</button>
 </div>
+
 
 <script>
     function editText(language) {
@@ -58,23 +73,60 @@ Yapay zeka tarafından yazılmış metni buraya yapıştırın..."></textarea>
                 .replace(/bu metin/g, 'bu yazı')
                 .replace(/belirli/g, 'bazı')
                 .replace(/fakat/g, 'ama')
+                .replace(/lakin/g, 'ama')
                 .replace(/çok/g, 'oldukça')
                 .replace(/aşağıdaki gibi/g, 'şu şekilde')
                 .replace(/özellikle/g, 'özellikle de')
                 .replace(/bununla birlikte/g, 'bunun yanında')
-                .replace(/dolayısıyla/g, 'sonuç olarak')
+                .replace(/dolayısıyla/g, 'sonucunda')
                 .replace(/şayet/g, 'eğer')
                 .replace(/belki/g, 'muhtemelen')
-                .replace(/böylece/g, 've böylece')
-                .replace(/işte/g, 'tam olarak')
+                .replace(/ve böylece/g, 'böylece')
+                .replace(/tam olarak/g, 'işte')
+                .replace(/yine de/g, 'ama yine de')
+                .replace(/çünkü/g, 'zira')
+                .replace(/her zaman/g, 'daima')
+                .replace(/kesinlikle/g, 'mutlaka')
+                .replace(/özellikle/g, 'özellikle de')
+                .replace(/böylelikle/g, 'bu şekilde')
+                .replace(/daha fazla/g, 'daha çok')
+                .replace(/gibi/g, 'benzeri')
+                .replace(/sadece/g, 'yalnızca')
+                .replace(/ilk başta/g, 'başlangıçta')
+                .replace(/çünkü/g, 'zira')
+                .replace(/her ne kadar/g, 'ne kadar')
+                .replace(/şu anda/g, 'şu an')
+                .replace(/günümüzde/g, 'bugünlerde')
+                .replace(/daha önce/g, 'önceden')
+                .replace(/aynı zamanda/g, 'zamanla')
+                .replace(/şayet/g, 'eğer isterseniz')
+                .replace(/birçok/g, 'çok sayıda')
+                .replace(/ne yazık ki/g, 'maalesef')
+                .replace(/tamam/g, 'peki')
+                .replace(/bütün/g, 'tüm')
+                .replace(/hiçbir/g, 'hiç bir')
+                .replace(/neden/g, 'sebep')
+                .replace(/zaman zaman/g, 'ara sıra')
+                .replace(/artık/g, 'sonunda')
+                .replace(/sürekli/g, 'devamlı')
+                .replace(/öncelikle/g, 'ilk olarak')
+                .replace(/belki de/g, 'muhtemelen de')
+                .replace(/gerçekten/g, 'doğrusu')
+                .replace(/gerekli/g, 'lazım')
+                .replace(/bazı durumlarda/g, 'bazı vakalarda')
+                .replace(/her ne kadar/g, 'her ne kadar da')
+                .replace(/bunun dışında/g, 'başka bir deyişle')
+                .replace(/sonuç olarak/g, 'nihayetinde')
+                .replace(/neden dolayı/g, 'sebep olarak')
                 .replace(/[\.\,\;\:\?\!]/g, '')
                 .replace(/\s+/g, ' ')
                 .replace(/([a-zA-Z])([A-Z])/g, function(match, p1, p2) { 
                     return p1 + p2.toLowerCase();
                 })
                 .replace(/^([a-z])/g, function(match) {
-                    return match.toUpperCase();
-                });
+        return match.toUpperCase();
+    })
+    
 
             document.getElementById('turkishText').innerText = turkishText;
         }
@@ -96,6 +148,31 @@ Yapay zeka tarafından yazılmış metni buraya yapıştırın..."></textarea>
                 .replace(/perhaps/g, 'maybe')
                 .replace(/thus/g, 'and thus')
                 .replace(/indeed/g, 'exactly')
+                .replace(/Artificial intelligence/g, 'I')
+                .replace(/however/g, 'but')
+                .replace(/this text/g, 'this writing')
+                .replace(/certain/g, 'some')
+                .replace(/furthermore/g, 'but also')
+                .replace(/very/g, 'quite')
+                .replace(/as follows/g, 'like this')
+                .replace(/especially/g, 'especially also')
+                .replace(/moreover/g, 'besides')
+                .replace(/therefore/g, 'as a result')
+                .replace(/if/g, 'in case')
+                .replace(/perhaps/g, 'maybe')
+                .replace(/thus/g, 'and thus')
+                .replace(/indeed/g, 'exactly')
+                .replace(/in addition/g, 'additionally')
+                .replace(/as well as/g, 'and also')
+                .replace(/significant/g, 'important')
+                .replace(/however/g, 'but')
+                .replace(/for example/g, 'such as')
+                .replace(/due to/g, 'because of')
+                .replace(/in order to/g, 'to')
+                .replace(/in fact/g, 'actually')
+                .replace(/on the other hand/g, 'in contrast')
+                .replace(/moreover/g, 'besides')
+                .replace(/recently/g, 'lately')
                 .replace(/[\.\,\;\:\?\!]/g, '')
                 .replace(/\s+/g, ' ')
                 .replace(/([a-zA-Z])([A-Z])/g, function(match, p1, p2) { 
@@ -124,7 +201,29 @@ Yapay zeka tarafından yazılmış metni buraya yapıştırın..."></textarea>
                 .replace(/si/g, 'en caso de que')
                 .replace(/tal vez/g, 'quizás')
                 .replace(/así/g, 'y así')
+                .replace(/en realidad/g, 'exactamente') 
+                .replace(/inteligencia artificial/g, 'yo')
+                .replace(/sin embargo/g, 'pero')
+                .replace(/este texto/g, 'este escrito')
+                .replace(/cierto/g, 'algunos')
+                .replace(/además/g, 'pero también')
+                .replace(/muy/g, 'bastante')
+                .replace(/de la siguiente manera/g, 'así')
+                .replace(/especialmente/g, 'especialmente también')
+                .replace(/además/g, 'aparte')
+                .replace(/por lo tanto/g, 'como resultado')
+                .replace(/si/g, 'en caso de que')
+                .replace(/tal vez/g, 'quizás')
+                .replace(/así/g, 'y así')
                 .replace(/en realidad/g, 'exactamente')
+                .replace(/además de/g, 'además de eso')
+                .replace(/por ejemplo/g, 'como ejemplo')
+                .replace(/debido a/g, 'a causa de')
+                .replace(/para que/g, 'a fin de')
+                .replace(/en realidad/g, 'en verdad')
+                .replace(/por otro lado/g, 'en cambio')
+                .replace(/además/g, 'a su vez')
+                .replace(/recientemente/g, 'últimamente')
                 .replace(/[\.\,\;\:\?\!]/g, '')
                 .replace(/\s+/g, ' ')
                 .replace(/([a-zA-Z])([A-Z])/g, function(match, p1, p2) { 
@@ -137,6 +236,19 @@ Yapay zeka tarafından yazılmış metni buraya yapıştırın..."></textarea>
             document.getElementById('spanishText').innerText = spanishText;
         }
     }
+
+    function copyText(id) {
+            var textToCopy = document.getElementById(id).innerText;
+            navigator.clipboard.writeText(textToCopy)
+                .then(function() {
+                    alert('Text Copied, ¡Texto copiado!, Metin Kopyalandı!');
+                })
+                .catch(function(error) {
+                    alert('Oops I Think There is a Problem! ' + error);
+                });
+        }
+
+
 </script>
 
 </body>
