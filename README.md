@@ -1,6 +1,6 @@
 # AI2Human 🚀
 
-## Current Version: v0.2-dev
+## Current Version: v0.2
 
 **AI2Human** is a project designed to transform and display text written by AI in a human-made way. The project was launched in version 0.1 and currently supports **3 languages**: English, Spanish, and Turkish.
 
