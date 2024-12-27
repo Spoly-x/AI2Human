@@ -1,6 +1,7 @@
 # AI2Human 🚀
 
-## IN CODE; IF YOU HAVE A  PROBLEM OR AN IDEA PLEASE 📨 xspoly21@gmail.com
+## 📨 GMAİL
+### IN CODE; IF YOU HAVE A  PROBLEM OR AN IDEA PLEASE 📨 xspoly21@gmail.com
 
 ## Current Version: v0.2
 
