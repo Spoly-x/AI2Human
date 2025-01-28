@@ -12,10 +12,7 @@ With AI becoming a part of our daily lives, some people don't want to reveal tha
 
 ## Features 🌟
 
-- **[From AI-Written English Text to Human-Written English Text]**: Our code tries to emulate human-made text as **BEST** as it can. 🔧
-- **[Texto Escrito por IA en español a Texto Escrito por Humanos en español.]**: Nuestro código ha sido escrito de la mejor manera por IA, tratando de asemejarse a la escritura humana en español. 🔍
-- **[Yapay Zeka Tarafından Yazılmış Türkçeden İnsan Tarafından Yazılmış Türkçeye]**: Kodumuz, yapabileceği **en iyi** şekilde, insan tarafından yazılmış Türkçeye çevirmeye çalışır. 🎯
-- **[And A Beautiful Background]** 🌈
+ - not yet sry*
 
 ## Installation 🔨
 
